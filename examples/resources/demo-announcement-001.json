@@ -1,0 +1,19 @@
+{
+  "schema_version": "aig-resource/0.1-draft",
+  "id": "demo-announcement-001",
+  "title": "合成示例 服务维护公告",
+  "publisher": { "id": "urn:aig:publisher:demo-announcements", "name": "Synthetic announcement publisher" },
+  "source": { "system": "publisher-file-source", "record_id": "public-announcement-001", "public_url": "https://publisher.example.invalid/announcements/demo-001" },
+  "revision": 1,
+  "status": "published",
+  "published_at": "2026-10-18T12:00:00Z",
+  "updated_at": "2026-10-18T12:00:00Z",
+  "synthetic": true,
+  "representations": [
+    {
+      "media_type": "text/plain",
+      "derivation": "original",
+      "content_text": "【合成样例】服务维护时间为 2026-10-20 02:00 至 03:00。\n维护期间，已有内容仍可读取；新内容暂缓发布。"
+    }
+  ]
+}

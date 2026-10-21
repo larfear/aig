@@ -1,0 +1,11 @@
+import { parseArgs } from 'node:util';
+import { resolve } from 'node:path';
+import { fileServer } from '../src/node-server.ts';
+import { contentMode } from '../src/core/content-mode.ts';
+const { values } = parseArgs({ options: { source: { type: 'string', default: '.local/demo/source' }, port: { type: 'string', default: '8787' }, 'content-mode': { type: 'string', default: 'synthetic' } } });
+const port = Number(values.port);
+if (!Number.isInteger(port) || port < 1 || port > 65535) throw new Error('Invalid port');
+const mode = contentMode(values['content-mode']);
+const server = fileServer(resolve(values.source!), mode);
+server.listen(port, '127.0.0.1', () => console.log(`AIG ${mode} file gateway: http://127.0.0.1:${port}/manifest.json`));
+for (const signal of ['SIGINT', 'SIGTERM'] as const) process.on(signal, () => server.close());

@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": ["ES2023"],
+    "types": []
+  },
+  "include": ["dev/**/*.ts", "src/core/**/*.ts", "src/adapters/d1.ts", "src/worker.ts", ".local/worker-configuration.d.ts"]
+}

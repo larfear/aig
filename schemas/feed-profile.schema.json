@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aig.example.invalid/schemas/feed-profile.schema.json",
+  "title": "AIG example JSON Feed subset profile, not a complete JSON Feed validator",
+  "type": "object",
+  "required": ["version", "title", "home_page_url", "feed_url", "items", "_aig"],
+  "properties": {
+    "version": { "const": "https://jsonfeed.org/version/1.1" },
+    "title": { "type": "string", "minLength": 1 },
+    "home_page_url": { "type": "string", "format": "uri" },
+    "feed_url": { "type": "string", "format": "uri" },
+    "_aig": {
+      "type": "object",
+      "required": ["synthetic"],
+      "properties": { "synthetic": { "type": "boolean" } }
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "url", "content_text", "date_published", "date_modified", "_aig"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "url": { "type": "string", "format": "uri" },
+          "title": { "type": "string", "minLength": 1 },
+          "content_text": { "type": "string", "minLength": 1 },
+          "date_published": { "type": "string", "format": "date-time" },
+          "date_modified": { "type": "string", "format": "date-time" },
+          "_aig": {
+            "type": "object",
+            "required": ["resource_url", "revision"],
+            "properties": {
+              "resource_url": { "type": "string", "format": "uri" },
+              "synthetic": { "type": "boolean" },
+              "revision": { "type": "integer", "minimum": 1 }
+            }
+          }
+        }
+      }
+    }
+  }
+}

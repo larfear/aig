@@ -1,0 +1,14 @@
+{
+  "schema_version": "aig-resource/0.1-draft",
+  "id": "demo-announcement-001",
+  "title": "合成示例 已撤回条目",
+  "publisher": { "id": "urn:aig:publisher:demo-announcements", "name": "Synthetic announcement publisher" },
+  "source": { "system": "publisher-file-source", "record_id": "public-announcement-001" },
+  "revision": 3,
+  "status": "withdrawn",
+  "published_at": "2026-10-18T12:00:00Z",
+  "updated_at": "2026-10-18T13:00:00Z",
+  "synthetic": true,
+  "withdrawal_reason": "演示发布者主动撤回。",
+  "representations": []
+}

@@ -1,0 +1,65 @@
+{
+  "name": "agent-information-gateway",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Publisher-side HTTP and JSON Feed gateway with exact content delivery, revisioned updates and withdrawals, and optional D1 hosting.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=24.14.0 <25"
+  },
+  "packageManager": "npm@11.9.0",
+  "scripts": {
+    "doctor": "node scripts/doctor.mjs",
+    "generate": "node scripts/generate-validator.mjs",
+    "typecheck": "npm run generate && tsc --noEmit && npm run cf:types && tsc --noEmit -p tsconfig.worker.json",
+    "cf:version": "node scripts/cloudflare.mjs version",
+    "cf:types": "node scripts/cloudflare.mjs types",
+    "db:local:init": "node scripts/cloudflare.mjs db:init",
+    "db:local:check": "node scripts/cloudflare.mjs db:check",
+    "dev:local": "node scripts/cloudflare.mjs dev",
+    "setup:local": "node scripts/setup-local.mjs",
+    "db:hosting:migrate": "node scripts/cloudflare.mjs hosting:migrate",
+    "dev:file": "npm run generate && node scripts/serve-file.ts",
+    "dev:hosting": "npm run generate && node scripts/cloudflare.mjs hosting:dev",
+    "demo:publish": "npm run generate && node scripts/demo-publish.ts",
+    "publisher:prepare": "node scripts/prepare-publisher.ts",
+    "publisher:serve": "npm run generate && node scripts/serve-publisher.ts",
+    "publisher:send": "npm run generate && node scripts/demo-publish.ts",
+    "acceptance:read": "npm run generate && node scripts/check-reader.ts",
+    "acceptance:local": "npm run generate && node scripts/accept-local.ts",
+    "client:read": "npm run generate && node scripts/read-client.ts",
+    "validation:prepare": "node scripts/prepare-validation.ts",
+    "validation:plan": "node scripts/cloud-validation.ts plan",
+    "validation:bundle": "npm run generate && node scripts/cloud-validation.ts bundle",
+    "validation:check": "npm run generate && node scripts/validate-gateway.ts",
+    "test": "npm run generate && node --test tests/*.test.ts",
+    "check:local": "node scripts/check-local.mjs",
+    "validate:examples": "node scripts/validate-examples.ts",
+    "verify": "npm run doctor && npm run typecheck && npm run validate:examples && npm run check:local && npm test && npm run acceptance:local"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "typescript": "7.0.2",
+    "wrangler": "4.151.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/larfear/aig.git"
+  },
+  "homepage": "https://github.com/larfear/aig#readme",
+  "bugs": {
+    "url": "https://github.com/larfear/aig/issues"
+  },
+  "keywords": [
+    "ai-agents",
+    "publisher-gateway",
+    "json-feed",
+    "cloudflare-workers",
+    "cloudflare-d1",
+    "typescript"
+  ],
+  "author": "larfear"
+}

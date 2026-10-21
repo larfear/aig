@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://aig.example.invalid/schemas/manifest.schema.json",
+  "title": "AIG manifest 0.1 draft",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "name", "experimental", "synthetic", "base_url", "feed_url", "resource_url_template", "capabilities"],
+  "properties": {
+    "schema_version": { "const": "aig-manifest/0.1-draft" },
+    "name": { "type": "string", "minLength": 1 },
+    "experimental": { "const": true },
+    "synthetic": { "type": "boolean" },
+    "base_url": { "type": "string", "format": "uri" },
+    "feed_url": { "type": "string", "format": "uri" },
+    "resource_url_template": { "type": "string", "minLength": 1 },
+    "capabilities": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["resources", "json_feed", "changes", "subscriptions", "search", "mcp"],
+      "properties": {
+        "resources": { "type": "boolean" },
+        "json_feed": { "type": "boolean" },
+        "changes": { "type": "boolean" },
+        "subscriptions": { "type": "boolean" },
+        "search": { "type": "boolean" },
+        "mcp": { "type": "boolean" }
+      }
+    }
+  }
+}

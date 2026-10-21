@@ -1,0 +1,27 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "AIG synthetic feed",
+  "home_page_url": "https://aig.example.invalid/",
+  "feed_url": "https://aig.example.invalid/feed.json",
+  "_aig": { "synthetic": true },
+  "items": [
+    {
+      "id": "demo-note-001",
+      "url": "https://aig.example.invalid/items/demo-note-001",
+      "title": "合成示例 发布者说明",
+      "content_text": "【合成样例】这是一个普通发布者的内容说明。\n原文符号：A&B、<示例>、中文标点与 emoji 🌐。",
+      "date_published": "2026-10-18T12:05:00Z",
+      "date_modified": "2026-10-18T12:05:00Z",
+      "_aig": { "resource_url": "https://aig.example.invalid/items/demo-note-001.json", "revision": 1, "synthetic": true }
+    },
+    {
+      "id": "demo-announcement-001",
+      "url": "https://aig.example.invalid/items/demo-announcement-001",
+      "title": "合成示例 服务维护公告",
+      "content_text": "【合成样例】服务维护时间为 2026-10-20 02:00 至 03:00。\n维护期间，已有内容仍可读取；新内容暂缓发布。",
+      "date_published": "2026-10-18T12:00:00Z",
+      "date_modified": "2026-10-18T12:00:00Z",
+      "_aig": { "resource_url": "https://aig.example.invalid/items/demo-announcement-001.json", "revision": 1, "synthetic": true }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+node_modules/
+.cache/
+.local/
+.wrangler/
+dist/
+coverage/
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+data/private/
+data/runtime/
+
+# Generated credential exports, private keys and local databases
+publisher-credentials.json
+secrets.json
+*.pem
+*.key
+*.p12
+*.pfx
+*.sqlite
+*.sqlite3
+*.db

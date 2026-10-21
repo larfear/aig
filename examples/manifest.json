@@ -1,0 +1,17 @@
+{
+  "schema_version": "aig-manifest/0.1-draft",
+  "name": "AIG synthetic example",
+  "experimental": true,
+  "synthetic": true,
+  "base_url": "https://aig.example.invalid/",
+  "feed_url": "https://aig.example.invalid/feed.json",
+  "resource_url_template": "https://aig.example.invalid/items/{id}.json",
+  "capabilities": {
+    "resources": true,
+    "json_feed": true,
+    "changes": false,
+    "subscriptions": false,
+    "search": false,
+    "mcp": false
+  }
+}

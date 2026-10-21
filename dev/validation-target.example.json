@@ -1,0 +1,9 @@
+{
+  "origin": "https://aig-verify.example.invalid/",
+  "account_id": "00000000000000000000000000000000",
+  "worker_name": "aig-validation",
+  "database_name": "aig-validation",
+  "database_id": "00000000-0000-0000-0000-000000000000",
+  "request_namespace_id": "2001",
+  "auth_namespace_id": "2002"
+}

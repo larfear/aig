@@ -1,0 +1,19 @@
+{
+  "schema_version": "aig-resource/0.1-draft",
+  "id": "demo-note-001",
+  "title": "合成示例 发布者说明",
+  "publisher": { "id": "urn:aig:publisher:demo-notes", "name": "Generic synthetic publisher" },
+  "source": { "system": "publisher-file-source", "record_id": "public-note-001" },
+  "revision": 1,
+  "status": "published",
+  "published_at": "2026-10-18T12:05:00Z",
+  "updated_at": "2026-10-18T12:05:00Z",
+  "synthetic": true,
+  "representations": [
+    {
+      "media_type": "text/plain",
+      "derivation": "original",
+      "content_text": "【合成样例】这是一个普通发布者的内容说明。\n原文符号：A&B、<示例>、中文标点与 emoji 🌐。"
+    }
+  ]
+}
